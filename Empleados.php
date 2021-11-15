@@ -1,5 +1,5 @@
 <?php
-    abstract class Empleados
+    abstract class Empleado
     {
         private $nombre;
         private $apellido;
@@ -52,7 +52,6 @@
 
         public function mostrar()
         {
-            echo "Está empleado ". ($this->nombre).($this->apellido) ." con el NSS: ". ($this->numeroSeguridadSocial).
-            "<br>Los ingresos ". ($this->ingresos());
+            return "Está empleado ". ($this->nombre).($this->apellido) ." con el NSS: ". ($this->numeroSeguridadSocial);
         }
     }
