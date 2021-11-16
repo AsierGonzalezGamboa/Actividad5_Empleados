@@ -36,12 +36,17 @@
                 return $this;
         }
 
+        public function ingresos()
+        {
+            return $this->sueldo + $this->dietas;
+        }
+
         public function mostrar()
         {
             $mensaje = parent::mostrar();
-            $mensaje .= "Los ingresos " . $this->ingresos();
+            $mensaje .= "<br>Los ingresos: " . $this->ingresos();
+            return $mensaje;
         }
-
 
     }
 

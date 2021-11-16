@@ -52,6 +52,6 @@
 
         public function mostrar()
         {
-            return "Está empleado ". ($this->nombre).($this->apellido) ." con el NSS: ". ($this->numeroSeguridadSocial);
+            return "Está empleado ". ($this->nombre)." ".($this->apellido) ." con el NSS: ". ($this->numeroSeguridadSocial);
         }
     }
