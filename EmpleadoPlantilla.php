@@ -50,5 +50,75 @@
 
     }
 
+    class EmpleadoPorComision extends Empleado
+    {
+        private $horas;
+        private $tarifa;
+        private $base;
+
+        public function __construct($nombre, $apellido, $numeroSeguridadSocial, $horas, $tarifa, $base)
+        {
+            parent::__construct($nombre, $apellido, $numeroSeguridadSocial);
+            $this->horas = $horas;
+            $this->tarifa = $tarifa;
+            $this->base = $base;
+        }
+
+        public function getHoras()
+        {
+                return $this->horas;
+        }
+
+        public function setHoras($horas)
+        {
+                $this->horas = $horas;
+
+                return $this;
+        }
+
+        public function getTarifa()
+        {
+                return $this->tarifa;
+        }
+
+        public function setTarifa($tarifa)
+        {
+                $this->tarifa = $tarifa;
+
+                return $this;
+        }
+
+        public function getBase()
+        {
+                return $this->base;
+        }
+
+        public function setBase($base)
+        {
+                $this->base = $base;
+
+                return $this;
+        }
+
+        public function ingresos()
+        {
+            return $this->base + ($this->horas * $this->tarifa);
+        }
+        
+        public function mostrar()
+        {
+            $mensaje = parent::mostrar();
+            $mensaje .= "<br>Los ingresos: " . $this->ingresos();
+            return $mensaje;
+        }
+    }
+
+    class PruebaPolimorf
+    {
+        static public function calcular($empleado)
+        {
+            return "Los ingresos de ". $empleado->getNombre() ." son ".$empleado->ingresos();
+        }
+    }
 
 ?>
